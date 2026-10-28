@@ -1,0 +1,271 @@
+{
+  "task": "ULB 2013",
+  "dataset": {
+    "train": {
+      "rows": 199364,
+      "fraud": 384
+    },
+    "tune": {
+      "rows": 25632,
+      "fraud": 34
+    },
+    "cal": {
+      "rows": 17089,
+      "fraud": 22
+    },
+    "test": {
+      "rows": 42722,
+      "fraud": 52
+    }
+  },
+  "budget_frac": 0.005,
+  "tuning": {
+    "lightgbm": {
+      "params": {
+        "learning_rate": 0.13941000679018942,
+        "num_leaves": 44,
+        "min_child_samples": 255,
+        "subsample": 0.7644474598764522,
+        "colsample_bytree": 0.7408267366563593,
+        "reg_lambda": 22.353773156705294,
+        "reg_alpha": 0.0019237305096546497,
+        "scale_pos_weight": 1.4061448697390062,
+        "subsample_freq": 1
+      },
+      "tune_metric": "pr_auc",
+      "tune_value": 0.9416743522154535,
+      "trials": 30,
+      "seconds": 56.8,
+      "tune_rows": 199364
+    },
+    "xgboost": {
+      "params": {
+        "learning_rate": 0.026826930394915256,
+        "max_depth": 6,
+        "min_child_weight": 2.386812565133672,
+        "subsample": 0.9036333685957217,
+        "colsample_bytree": 0.45803619456209926,
+        "reg_lambda": 1.266418454042908,
+        "reg_alpha": 0.008738438740189354,
+        "gamma": 2.1000913616494095,
+        "scale_pos_weight": 6.709163925360497
+      },
+      "tune_metric": "pr_auc",
+      "tune_value": 0.9452364690408762,
+      "trials": 30,
+      "seconds": 25.8,
+      "tune_rows": 100000
+    },
+    "catboost": {
+      "params": {
+        "learning_rate": 0.242363738291748,
+        "depth": 7,
+        "l2_leaf_reg": 19.054559321359573,
+        "random_strength": 1.44280129528622,
+        "bagging_temperature": 0.24911500585796353,
+        "scale_pos_weight": 2.5242665795306904
+      },
+      "tune_metric": "pr_auc",
+      "tune_value": 0.9439128452988184,
+      "trials": 20,
+      "seconds": 17.0,
+      "tune_rows": 60000
+    }
+  },
+  "final_models": {
+    "lightgbm": {
+      "trees": 34,
+      "fit_seconds": 1.8
+    },
+    "xgboost": {
+      "trees": 59,
+      "fit_seconds": 1.1
+    },
+    "catboost": {
+      "trees": 15,
+      "fit_seconds": 1.3
+    }
+  },
+  "cal_tpr_at_5fpr": {
+    "logistic_regression": 0.8636363636363636,
+    "lightgbm": 0.8636363636363636,
+    "xgboost": 0.9090909090909091,
+    "catboost": 0.8181818181818182,
+    "blend": 0.8636363636363636
+  },
+  "deployed": "xgboost",
+  "best_on_cal": "xgboost",
+  "test": {
+    "logistic_regression": {
+      "tpr_at_5fpr": {
+        "value": 0.8846153846153846,
+        "lo": 0.7872340425531915,
+        "hi": 0.9642857142857143
+      },
+      "pr_auc": {
+        "value": 0.6914212919755627,
+        "lo": 0.5317660337965397,
+        "hi": 0.8294135895023391
+      },
+      "recall_at_budget": {
+        "value": 0.7884615384615384,
+        "lo": 0.6666666666666666,
+        "hi": 0.8931064073226543
+      }
+    },
+    "lightgbm": {
+      "tpr_at_5fpr": {
+        "value": 0.8653846153846154,
+        "lo": 0.7755102040816326,
+        "hi": 0.9583333333333334
+      },
+      "pr_auc": {
+        "value": 0.7413720339757511,
+        "lo": 0.6286867772424886,
+        "hi": 0.8584764774069412
+      },
+      "recall_at_budget": {
+        "value": 0.7884615384615384,
+        "lo": 0.6777297297297298,
+        "hi": 0.9029506033182504
+      }
+    },
+    "xgboost": {
+      "tpr_at_5fpr": {
+        "value": 0.8653846153846154,
+        "lo": 0.7553174603174603,
+        "hi": 0.9555830039525691
+      },
+      "pr_auc": {
+        "value": 0.7601968671091509,
+        "lo": 0.6331938395535717,
+        "hi": 0.8622386458053612
+      },
+      "recall_at_budget": {
+        "value": 0.8076923076923077,
+        "lo": 0.6937047399605003,
+        "hi": 0.9107655502392343
+      }
+    },
+    "catboost": {
+      "tpr_at_5fpr": {
+        "value": 0.8461538461538461,
+        "lo": 0.7395434782608695,
+        "hi": 0.9351507713884992
+      },
+      "pr_auc": {
+        "value": 0.7445523351876272,
+        "lo": 0.6212285935020191,
+        "hi": 0.8529470895133537
+      },
+      "recall_at_budget": {
+        "value": 0.75,
+        "lo": 0.6339423076923076,
+        "hi": 0.8641308446455505
+      }
+    },
+    "blend": {
+      "tpr_at_5fpr": {
+        "value": 0.9038461538461539,
+        "lo": 0.8123840741925168,
+        "hi": 0.9767441860465116
+      },
+      "pr_auc": {
+        "value": 0.7584497793976523,
+        "lo": 0.6337849227518011,
+        "hi": 0.8651840174057815
+      },
+      "recall_at_budget": {
+        "value": 0.7884615384615384,
+        "lo": 0.6724137931034483,
+        "hi": 0.8998114630467571
+      }
+    }
+  },
+  "calibration": {
+    "chosen": "isotonic",
+    "cross_fit_brier_on_cal": {
+      "platt": 0.0005891620554733561,
+      "isotonic": 0.0005804162423172697
+    },
+    "raw": {
+      "brier": 0.001171282002444475,
+      "ece": 0.026627342324491342
+    },
+    "platt": {
+      "brier": 0.00048311328312867065,
+      "ece": 0.0003732951467578386
+    },
+    "isotonic": {
+      "brier": 0.00048178533333469853,
+      "ece": 0.00026675349387320123
+    }
+  },
+  "alert_threshold_margin": -3.482896327972412,
+  "psi_train_vs_test": [
+    {
+      "feature": "V1",
+      "psi": 1.0139895913433592
+    },
+    {
+      "feature": "V3",
+      "psi": 0.750465530852117
+    },
+    {
+      "feature": "V28",
+      "psi": 0.5319311518511142
+    },
+    {
+      "feature": "V11",
+      "psi": 0.33937169031075737
+    },
+    {
+      "feature": "V25",
+      "psi": 0.2862704813610834
+    },
+    {
+      "feature": "V12",
+      "psi": 0.21752918237802046
+    },
+    {
+      "feature": "V15",
+      "psi": 0.21740356784163012
+    },
+    {
+      "feature": "V5",
+      "psi": 0.16744182691044246
+    }
+  ],
+  "config": {
+    "trials": {
+      "lightgbm": 30,
+      "xgboost": 30,
+      "catboost": 20
+    },
+    "timeout": {
+      "lightgbm": 720.0,
+      "xgboost": 600.0,
+      "catboost": 1200.0
+    },
+    "tune_rows": {
+      "lightgbm": 400000,
+      "xgboost": 100000,
+      "catboost": 60000
+    },
+    "seed": 0,
+    "n_jobs": -1,
+    "n_boot": 500,
+    "reuse_params": null
+  },
+  "random_vs_temporal": {
+    "temporal": {
+      "tpr_at_5fpr": 0.8653846153846154,
+      "pr_auc": 0.7601968671091509
+    },
+    "random": {
+      "tpr_at_5fpr": 0.9444444444444444,
+      "pr_auc": 0.8283179668046851
+    }
+  },
+  "seconds": 113.4
+}

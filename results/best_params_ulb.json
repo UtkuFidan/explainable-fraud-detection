@@ -1,0 +1,53 @@
+{
+  "lightgbm": {
+    "params": {
+      "learning_rate": 0.13941000679018942,
+      "num_leaves": 44,
+      "min_child_samples": 255,
+      "subsample": 0.7644474598764522,
+      "colsample_bytree": 0.7408267366563593,
+      "reg_lambda": 22.353773156705294,
+      "reg_alpha": 0.0019237305096546497,
+      "scale_pos_weight": 1.4061448697390062,
+      "subsample_freq": 1
+    },
+    "tune_metric": "pr_auc",
+    "tune_value": 0.9416743522154535,
+    "trials": 30,
+    "seconds": 56.8,
+    "tune_rows": 199364
+  },
+  "xgboost": {
+    "params": {
+      "learning_rate": 0.026826930394915256,
+      "max_depth": 6,
+      "min_child_weight": 2.386812565133672,
+      "subsample": 0.9036333685957217,
+      "colsample_bytree": 0.45803619456209926,
+      "reg_lambda": 1.266418454042908,
+      "reg_alpha": 0.008738438740189354,
+      "gamma": 2.1000913616494095,
+      "scale_pos_weight": 6.709163925360497
+    },
+    "tune_metric": "pr_auc",
+    "tune_value": 0.9452364690408762,
+    "trials": 30,
+    "seconds": 25.8,
+    "tune_rows": 100000
+  },
+  "catboost": {
+    "params": {
+      "learning_rate": 0.242363738291748,
+      "depth": 7,
+      "l2_leaf_reg": 19.054559321359573,
+      "random_strength": 1.44280129528622,
+      "bagging_temperature": 0.24911500585796353,
+      "scale_pos_weight": 2.5242665795306904
+    },
+    "tune_metric": "pr_auc",
+    "tune_value": 0.9439128452988184,
+    "trials": 20,
+    "seconds": 17.0,
+    "tune_rows": 60000
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "Base": {
+    "rows": 1000000,
+    "fraud_rate": 0.011029,
+    "share_over_50": 0.183013,
+    "fraud_rate_over_50": 0.023413637282597412,
+    "fraud_rate_under_50": 0.008254721311355016,
+    "tpr_at_5fpr": 0.5503822098679638,
+    "pr_auc": 0.1980431375598527,
+    "global_threshold": {
+      "fpr_under_50": 0.04590092297880633,
+      "fpr_over_50": 0.14074412930771577,
+      "fpr_ratio": 3.0662592421660246,
+      "overall_tpr": 0.5927727588603197
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.06190985160295967,
+      "fpr_over_50": 0.06523330283623056,
+      "fpr_ratio": 1.0536821062758293,
+      "overall_tpr": 0.5670604586518415
+    }
+  },
+  "Variant I": {
+    "rows": 1000000,
+    "fraud_rate": 0.011029,
+    "share_over_50": 0.110699,
+    "fraud_rate_over_50": 0.012159098094833738,
+    "fraud_rate_under_50": 0.010888326899441246,
+    "tpr_at_5fpr": 0.5309242529534399,
+    "pr_auc": 0.19423065435468406,
+    "global_threshold": {
+      "fpr_under_50": 0.05736266177859246,
+      "fpr_over_50": 0.07089856121617953,
+      "fpr_ratio": 1.235970560254556,
+      "overall_tpr": 0.5635858234885337
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.05837915902905071,
+      "fpr_over_50": 0.0657406569541218,
+      "fpr_ratio": 1.1260980467602806,
+      "overall_tpr": 0.5660180681028492
+    }
+  },
+  "Variant II": {
+    "rows": 1000000,
+    "fraud_rate": 0.011029,
+    "share_over_50": 0.505847,
+    "fraud_rate_over_50": 0.018246623979187384,
+    "fraud_rate_under_50": 0.0036405728590133014,
+    "tpr_at_5fpr": 0.5562890896455872,
+    "pr_auc": 0.2142291338959831,
+    "global_threshold": {
+      "fpr_under_50": 0.015671900539897966,
+      "fpr_over_50": 0.10370897447300542,
+      "fpr_ratio": 6.6175110165471125,
+      "overall_tpr": 0.5958999305072967
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.06075585714993313,
+      "fpr_over_50": 0.061776710446994176,
+      "fpr_ratio": 1.0168025494980968,
+      "overall_tpr": 0.5357887421820708
+    }
+  },
+  "Variant III": {
+    "rows": 1000000,
+    "fraud_rate": 0.01103,
+    "share_over_50": 0.505861,
+    "fraud_rate_over_50": 0.01119082119396435,
+    "fraud_rate_under_50": 0.010865363794397932,
+    "tpr_at_5fpr": 0.7601809954751131,
+    "pr_auc": 0.5442942590505774,
+    "global_threshold": {
+      "fpr_under_50": 0.0186629008253281,
+      "fpr_over_50": 0.09394355933887583,
+      "fpr_ratio": 5.033706186306343,
+      "overall_tpr": 0.778657616892911
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.052234136111486945,
+      "fpr_over_50": 0.06032426882183432,
+      "fpr_ratio": 1.1548821003391354,
+      "overall_tpr": 0.7405731523378583
+    }
+  },
+  "Variant IV": {
+    "rows": 1000000,
+    "fraud_rate": 0.01103,
+    "share_over_50": 0.505812,
+    "fraud_rate_over_50": 0.01655555819158106,
+    "fraud_rate_under_50": 0.005374472872671939,
+    "tpr_at_5fpr": 0.444947209653092,
+    "pr_auc": 0.11198633387063185,
+    "global_threshold": {
+      "fpr_under_50": 0.015838519821404412,
+      "fpr_over_50": 0.10109800934053195,
+      "fpr_ratio": 6.383046552361957,
+      "overall_tpr": 0.48001508295625944
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.05888073332431335,
+      "fpr_over_50": 0.06008413103242688,
+      "fpr_ratio": 1.02043788587831,
+      "overall_tpr": 0.5343137254901961
+    }
+  },
+  "Variant V": {
+    "rows": 1000000,
+    "fraud_rate": 0.01103,
+    "share_over_50": 0.505846,
+    "fraud_rate_over_50": 0.011183245493687802,
+    "fraud_rate_under_50": 0.01087312861982297,
+    "tpr_at_5fpr": 0.36689291101055804,
+    "pr_auc": 0.0714812931841195,
+    "global_threshold": {
+      "fpr_under_50": 0.019816299604181468,
+      "fpr_over_50": 0.0970575572923566,
+      "fpr_ratio": 4.897864850200203,
+      "overall_tpr": 0.391025641025641
+    },
+    "group_thresholds": {
+      "fpr_under_50": 0.055110118745559725,
+      "fpr_over_50": 0.061821102132732814,
+      "fpr_ratio": 1.121774068717894,
+      "overall_tpr": 0.4381598793363499
+    }
+  }
+}
